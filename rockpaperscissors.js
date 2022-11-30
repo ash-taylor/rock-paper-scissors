@@ -1,3 +1,9 @@
+let playerScore = 0;
+let computerScore = 0;
+
+let win = (player, computer) => `You Win! ${player} beats ${computer}`;
+let loss = (computer, player) => `You Lose! ${computer} beats ${player}`;
+
 function getComputerChoice() {
     randomNumber = Math.floor(Math.random() * 10) % 3;
 
@@ -47,11 +53,5 @@ function game() {
         console.log("It's a Draw!")
     }
 }
-
-let win = (player, computer) => `You Win! ${player} beats ${computer}`;
-let loss = (computer, player) => `You Lose! ${computer} beats ${player}`;
-
-let playerScore = 0;
-let computerScore = 0;
 
 game();
