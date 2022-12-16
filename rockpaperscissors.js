@@ -1,8 +1,7 @@
 let playerScore = 0;
 let computerScore = 0;
+let gamesPlayed = 0;
 
-let win = (player, computer) => `You Win! ${player} beats ${computer}`;
-let loss = (computer, player) => `You Lose! ${computer} beats ${player}`;
 
 function getComputerChoice() {
     randomNumber = Math.floor(Math.random() * 10) % 3;
@@ -16,6 +15,7 @@ function getComputerChoice() {
             return 'scissors';
     }
 }
+
 
 function playRound(player, computerSelection) {
     if (player === computerSelection) {
@@ -33,25 +33,51 @@ function playRound(player, computerSelection) {
     }   
 }
 
+let win = (player, computer) => `You Win! ${player} beats ${computer}`;
+let loss = (computer, player) => `You Lose! ${computer} beats ${player}`;
+
+
+const buttons = document.querySelectorAll('button');
+
+let results = document.querySelector('.currentScore');
+const score = document.createElement('p');
+score.textContent = playerScore.toString();
+results.appendChild(score);
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        console.log(button.id);
+        if (gamesPlayed < 5) {
+            playRound(button.id, getComputerChoice());
+        }
+        else {
+            alert("Start a New Round!")
+        }
+        score.textContent = playerScore.toString();
+        results.appendChild(score);
+        gamesPlayed += 1;
+        if (gamesPlayed === 5) game();
+    }) 
+})
+
+let result = document.querySelector('.result');
+const gameResult = document.createElement('p');
+
 function game() {
-    playerScore = 0;
-    computerScore = 0;
-
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("Player's Choice: ").toLowerCase();
-        let computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection, computerSelection));
-    }
-
     if (playerScore > computerScore) {
-        console.log("Player Wins!")
+        gameResult.textContent = "You Win!";
     }
     else if (computerScore < playerScore) {
-        console.log("Computer Wins!")
+        gameResult.textContent = "You You Lose!";
     }
     else {
-        console.log("It's a Draw!")
+        gameResult.textContent = "It's a Draw!";
     }
+    result.appendChild(gameResult);
 }
 
-game();
+function newGame() {
+    playerScore = 0;
+    computerScore = 0;
+    gamesPlayed = 0;
+}
