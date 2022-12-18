@@ -10,20 +10,32 @@
 </head>
 <body>
     <header>
-        <h1>Rock! Paper! Scissors!</h1>
+        <h1>Rock | Paper | Scissors</h1>
     </header>
 
-    <div class="buttons">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
+    <div class="gameBoard">
+        <h2>Make Your Choice</h2>
+        <div class="gameBox">
+            <div class="buttons">
+                <button class="gameButton" id="Rock"><img src="./images/rock.png" alt="Rock"></button>
+                <button class="gameButton" id="Paper"><img src="./images/paper.png" alt="Paper"></button>
+                <button class="gameButton" id="Scissors"><img src="./images/scissors.png" alt="Scissors"></button>
+            </div>
+        </div>
     </div>
-    <div class="results">
-        <h2>Results</h2>
+
+    <div class="resultsBox">
+        <div class="gameHistory">
+            <!-- <h3>Game History</h3> -->
+        </div>
         <div class="currentScore">
-            <h2>Current Score</h2>
+            <!-- <h2>Current Score</h2> -->
         </div>
         <div class="result"></div>
     </div>
+
+    <footer>
+        <p>&copy Ash Taylor 2022</p>
+    </footer>
 </body>
 </html>
