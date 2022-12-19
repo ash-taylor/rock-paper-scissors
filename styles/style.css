@@ -52,7 +52,7 @@ h3 {
     gap: 2em;
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 1000px) {
     .buttons {
         display: flex;
         flex-direction: column;
@@ -96,6 +96,12 @@ footer {
     box-shadow: 3px 3px 10px 0px #0A0908;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+@media (max-width: 300px) {
+    .buttons button {
+        padding: 2em;
+    }
 }
 
 button {
