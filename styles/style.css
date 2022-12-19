@@ -48,6 +48,18 @@ h3 {
     flex-wrap: nowrap;
 }
 
+.buttons {
+    gap: 2em;
+}
+
+@media (max-width: 1250px) {
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
 .resultsBox {
     max-height: 100%;
     display: flex;
@@ -101,5 +113,5 @@ button {
  
 img {
     max-width: 100px;
-    max-height: 100px;
+    height: auto;
 }
